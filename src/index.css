@@ -11,15 +11,15 @@
     --color-gray-700: #252542;
     --color-gray-900: #0c0c22;
 
-    --color-nav:#273843;
-    --color-nav-on-scroll:rgba(39, 56, 67, 0.4);
+    --color-nav: #273843;
+    --color-nav-on-scroll: rgba(39, 56, 67, 0.4);
 
     --color-bg: hwb(240 95% 0%);
-    
+
     --transition: all 300ms ease;
-    
+
     --container-width-lg: 84%;
-    
+
     --container-width-md: 92%;
 
     --form-width: 50%;
@@ -38,7 +38,7 @@
     outline: 0;
 }
 
-body{
+body {
     font-family: "Poppins", sans-serif;
     font-size: 0.9rem;
     line-height: 1.6;
@@ -65,11 +65,16 @@ ul {
     list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     /* line-height: 1.1; */
 }
 
- h1 {
+h1 {
     font-size: 0.69rem;
 }
 
@@ -183,7 +188,7 @@ section {
     height: 100%;
 }
 
-.nav__logo{
+.nav__logo {
     /* width: 10rem; */
     display: block;
 }
@@ -359,7 +364,9 @@ footer {
     gap: 0.8rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 0.6rem 1rem;
     border-radius: var(--radius-1);
@@ -376,7 +383,9 @@ input, select, textarea {
     margin-bottom: 1rem;
 }
 
-.register, .login, .create-post{
+.register,
+.login,
+.create-post {
     width: var(--form-width);
     margin-inline: auto;
     height: calc(100vh - 12rem);
@@ -384,16 +393,20 @@ input, select, textarea {
     place-items: center;
 }
 
-.register h2, .login h2, .create-post h2 {
+.register h2,
+.login h2,
+.create-post h2 {
     margin-bottom: 2rem;
 }
 
-.register small, .lo small {
+.register small,
+.lo small {
     display: block;
     margin-top: 1.5rem;
 }
 
-.register small a, .login small a {
+.register small a,
+.login small a {
     color: var(--color-primary);
 }
 
@@ -426,7 +439,7 @@ input, select, textarea {
 }
 
 .author:hover {
-    box-shadow: 0 1rem 1.5rem rgba(0,0,0,0.07);
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.07);
 }
 
 .author__avatar {
@@ -478,7 +491,8 @@ input, select, textarea {
     visibility: hidden
 }
 
-.avatar__form label, .profile__avatar-btn {
+.avatar__form label,
+.profile__avatar-btn {
     background: var(--color-gray-900);
     color: var(--color-white);
     font-size: 1.3rem;
@@ -551,15 +565,15 @@ input, select, textarea {
 /* ************************************ MEDIA QUERIED (small devices) ************************************ */
 @media screen and (max-width: 800px) {
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     h2 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .container {
@@ -582,7 +596,31 @@ input, select, textarea {
     .nav__menu li {
         width: 100%;
         box-shadow: -2rem 4rem 4rem rgba(0, 0, 0, 0.26);
+        animation: dropDown 500ms ease forwards;
+        opacity: 0;
+        transform: rotateX(90deg);
+        transform-origin: top;
     }
+
+    @keyframes dropDown {
+        to {
+            opacity: 1;
+            transform: rotateX(0);
+        }
+    }
+
+    .nav__menu li:nth-child(2) {
+        animation-delay: 300ms;
+    }
+
+    .nav__menu li:nth-child(3) {
+        animation-delay: 600ms;
+    }
+
+    .nav__menu li:nth-child(4) {
+        animation-delay: 900ms;
+    }
+
 
     .nav__menu li a {
         display: block;
@@ -597,5 +635,48 @@ input, select, textarea {
         color: white;
         font-size: 1.5rem;
         cursor: pointer;
+    }
+
+    .posts__container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer__categories {
+        flex-direction: column;
+    }
+
+    .post-detail {
+        width: 100%;
+        background: transparent;
+        padding: 0;
+    }
+
+    .register,
+    .login,
+    .create-post {
+        width: 100%;
+    }
+
+    .form.profile__form {
+        margin-top: 2.5rem;
+        width: 100%;
+    }
+
+    .authors__container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .dashboard__post {
+        flex-direction: column;
+    }
+
+    .dashboard__post-info {
+        gap: 1.5rem;
+    }
+
+    .dashboard__post-thumbnail {
+        width: 5rem;
     }
 }
