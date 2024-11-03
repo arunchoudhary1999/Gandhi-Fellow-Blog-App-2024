@@ -78,7 +78,7 @@ h1 {
     font-size: 0.69rem;
 }
 
-/*h2 {
+h2 {
     font-size: 1.9rem;
 }
 
@@ -93,7 +93,7 @@ h2 {
 
 h5 {
     line-height: 1.4;
-} */
+}
 
 img {
     display: block;
@@ -565,7 +565,7 @@ textarea {
 /* ************************************ MEDIA QUERIED (small devices) ************************************ */
 @media screen and (max-width: 800px) {
     h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     h2 {
